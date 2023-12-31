@@ -1,0 +1,183 @@
+// =============================================================================
+// VARIABLE
+// =============================================================================
+	$white: #ffffff;
+
+	$classic-red-500: rgb(225, 89, 68, 1);
+	$classic-blue-500: rgb(95, 170, 239, 1);
+	$classic-green-500: rgba(63,179,157, 1);
+
+	$accent-pink-050: rgba(251, 235, 233, 1);
+	$accent-pink-100: rgba(247, 215, 212, 1);
+	$accent-pink-200: rgba(240, 175, 168, 1);
+	$accent-pink-500: rgba(232, 137, 126, 1);
+	$accent-pink-600: rgba(198, 94, 83, 1);
+	$accent-pink-900: rgba(178, 87, 77, 1);
+
+	$neutral-050: rgba(241, 238, 238, 1);
+	$neutral-100: rgba(232, 227, 227, 1);
+	$neutral-200: rgba(182, 175, 175, 1);
+	$neutral-500: rgba(106, 98, 98, 1);
+	$neutral-600: rgba(54, 48, 48, 1);
+	$neutral-900: rgba(30, 20, 20, 1);
+
+
+// =============================================================================
+// CONTAINTER SIZING
+// =============================================================================
+@mixin container_sizing( $max_size ){
+	width: 85%;
+	max-width: $max_size;
+	margin: 0 auto;
+}
+
+// =============================================================================
+// TYPO
+// =============================================================================
+@mixin header-1( $color ){
+	font-family: 'quattrocento';
+	color: $color;
+	font-size: 32px;
+	line-height: 37px;
+}
+
+@mixin header-2( $color ){
+	font-family: 'quattrocento';
+	color: $color;
+	font-size: 24px;
+	line-height: 27px;
+}
+
+@mixin header-3( $color ){
+	font-family: 'quattrocento';
+	color: $color;
+	font-size: 18px;
+	line-height: 24px;
+}
+
+@mixin body-1( $color ){
+	font-family: 'lora';
+	color: $color;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+@mixin body-2( $color ){
+	font-family: 'lora';
+	color: $color;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+@mixin body-3( $color ){
+	font-family: 'lora';
+	color: $color;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+// =============================================================================
+// BUTTON
+// =============================================================================
+@mixin primary_button(){
+	background-color: $accent-pink-500;
+	@include body-1( $white );
+	transition: all 200ms;
+	display: block;
+	text-align: center;
+	padding: 12px 16px;
+	border-radius: 12px;
+	cursor: pointer;
+
+	&:hover{
+		background-color: $accent-pink-600;
+	}
+}
+
+@mixin secondary_button(){}
+
+@mixin tertiary_button(){
+	overflow: auto;
+	width: fit-content;
+	height: fit-content;
+	border-radius: 4px;
+	padding: 6px 8px;
+	cursor: pointer;
+	transition: all 200ms;
+
+	&:hover{
+		background-color: $accent-pink-100;
+	}
+
+	span.icon{
+		float: left;
+		margin-right: 8px;
+
+		img{
+			width: 22px;
+		}
+	}
+	p.text{
+		float: left;
+		@include body-1( $neutral-900 );
+		line-height: 18px;
+	}
+}
+
+@mixin link(){
+	font-family: 'lora';
+	color: $accent-pink-400;
+	font-size: 16px;
+	line-height: 24px;
+	transition: color 200ms;
+
+	&:hover{
+		color: $accent-pink-600;
+	}
+}
+
+
+// =============================================================================
+// INPUT
+// =============================================================================
+@mixin input-text(){
+	label{
+		font-family: 'lora';
+		color: $neutral-500;
+		font-size: 12px;
+		display: block;
+		margin: 0 0 4px 0;
+
+		span.optionnel{
+			font-size: 10px;
+			color: $neutral-200;
+		}
+	}
+	input{
+		@include body-1( $neutral-500 );
+		border: 1px $neutral-900 solid;
+		border-radius: 10px;
+		padding: 12px 16px;
+		width: calc(100% - 34px);
+	}
+}
+
+@mixin input-select(){}
+
+@mixin input-checkbox(){}
+
+@mixin input-radio(){}
+
+@mixin input-textarea(){}
+
+
+
+// =============================================================================
+// OTHER
+// =============================================================================
+@mixin block-banner(){
+	@include body-2( $neutral-900 );
+	background-color: $accent-pink-050;
+	border-radius: 10px;
+	padding: 12px;
+}

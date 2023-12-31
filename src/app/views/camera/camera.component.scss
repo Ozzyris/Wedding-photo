@@ -1,0 +1,187 @@
+// =============================================================================
+// IMPORT
+// =============================================================================
+@import "../../../assets/styles/ui-mixines";
+
+// =============================================================================
+// MOBILE
+// =============================================================================
+section.camera{
+	div.camera-group{
+		width: 100%;
+		height: 75vh;
+		max-width: 600px;
+		margin: 0 auto;
+		position: relative;
+
+		div.camera{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			background-color: $neutral-100;
+		}
+		div.grid{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+
+			div.line-group{
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+
+				&.horizontal{
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: space-around;
+					flex-direction: column;
+
+					div.content{
+						display: flex;
+						justify-content: space-between;
+						flex-direction: column;
+						height: 150px;
+						width: 100%;
+
+						span.line{
+							height: 2px;
+							width: 100%;
+							background-color: $white;
+							display: block;
+						}
+					}
+				}
+				&.vertical{
+					width: 100%;
+					height: 100%;
+					display: flex;
+					justify-content: space-around;
+
+					div.content{
+						display: flex;
+						justify-content: space-between;
+						width: 150px;
+						height: 100%;
+
+						span.line{
+							width: 2px;
+							height: 100%;
+							background-color: $white;
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+	div.library{
+		overflow: auto;
+		max-width: 600px;
+		margin: 36px auto auto auto;
+
+		ul{
+			overflow: auto;
+			width: calc(8 * 80px + 7.5%);
+			padding-left: calc(7.5%);
+			height: 74px;
+
+			li{
+				width: 72px;
+				height: 72px;
+				float: left;
+				margin-left: 8px;
+
+				img{
+					width: 100%;
+					height: 100%;
+					border-radius: 10px;
+
+				}
+			}
+		}
+	}
+	div.footer{
+		position: relative;
+		@include container_sizing( 600px );
+		bottom: 24px;
+		margin-top: 16px;
+
+		div.button.tertiary{
+			position: absolute;
+			left: 0;
+			top: 30px;
+			@include tertiary_button();
+
+			span.icon{
+				img{}
+			}
+			p.text{}
+		}
+		a.camera{
+			span.illustration{
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				width: 48px;
+				height: 48px;
+				background-color: $neutral-900;
+				border-radius: 50%;
+				border: 8px solid $white;
+				margin: 0 auto;
+
+				img{
+					width: 60%;
+				}
+			}
+		}
+	}
+}
+
+// =============================================================================
+// TABLETTE
+// =============================================================================
+@media screen and (min-width: 728px ){
+	section.camera{
+		div.camera-group{
+			div.camera{}
+			div.grid{
+				span.line{
+					&.horizontal{}
+					&.vertical{}
+				}
+			}
+		}
+		div.library{
+			ul{
+				padding-left: 0;
+
+				li{
+					img{}
+				}
+			}
+		}
+		div.action{
+			div.button.tertiary{
+				span.icon{
+					img{}
+				}
+				p.text{}
+			}
+		}
+	}
+}
+// =============================================================================
+// DESKTOP
+// =============================================================================
+@media screen and (min-width: 1200px ){}
+
+// =============================================================================
+// ANIMATION
+// =============================================================================

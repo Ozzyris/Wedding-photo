@@ -1,0 +1,203 @@
+// =============================================================================
+// IMPORT
+// =============================================================================
+@import "../../../assets/styles/ui-mixines";
+
+// =============================================================================
+// MOBILE
+// =============================================================================
+section.photo{
+	div.header{
+		@include container_sizing( 600px );
+		margin: 36px auto 36px auto;
+		display: flex;
+		justify-content: space-between;
+
+
+		div.button.tertiary{
+			@include tertiary_button();
+
+			&:hover{}
+			span.icon{
+				img{}
+			}
+			p.text{}
+		}
+		div.dropdown-container{
+			position: relative;
+
+			div.button.tertiary{
+				span.more{
+					height: 10px;
+
+					img{
+						width: 22px;
+					}
+				}
+			}
+			div.dropdown{
+				display: none;
+				position: absolute;
+				background-color: $white;
+				box-shadow: 2px 2px 10px $neutral-100;
+				border-radius: 4px;
+				right: 0px;
+				text-align: center;
+
+				&.open{
+					display: block;
+				}
+
+				ul{
+					li{
+						padding: 16px 12px;
+						width: 160px;
+						cursor: pointer;
+						transition: all 200;
+
+						&:hover{
+							background-color: $neutral-050;
+						}
+						&:last-child{
+							border-top: 1px solid $neutral-050;
+						}
+					}
+				}
+			}
+		}
+	}
+	div.content{
+		@include container_sizing( 600px );
+		margin-bottom: 48px;
+
+		div.image-group{
+			width: 100%;
+
+			img{
+				width: 100%;
+				border-radius: 10px;
+			}
+		}
+		div.info{
+			overflow: auto;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 36px;
+
+			div.author{
+				overflow: auto;
+
+				div.illustration{
+					float: left;
+					width: 48px;
+					height: 48px;
+
+					span.avatar{
+						display: block;
+						width: 100%;
+						height: 100%;
+						background: rgb(244,180,132);
+						border-radius: 50%;
+						background: linear-gradient(90deg, rgba(244,180,132,1) 0%, rgba(240,201,192,1) 100%);
+						text-align: center;
+						@include header-2( $white );
+						line-height: 48px;
+					}
+				}
+				div.name{
+					float: left;
+					@include body-2( $neutral-600 );
+					line-height: 48px;
+					margin-left: 8px;
+					
+				}
+			}
+			div.likes{
+				overflow: auto;
+				cursor: pointer;
+
+				&:hover{
+					div.illustration{
+						background-color: $accent-pink-100;
+					}
+				}
+
+				div.illustration{
+					float: left;
+					width: 48px;
+					height: 48px;
+					background-color: $accent-pink-050;
+					border-radius: 50%;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					transition: all 200ms;
+
+					img{}
+				}
+				p{
+					float: left;
+					@include body-2( $neutral-600 );
+					line-height: 48px;
+					margin-left: 8px;
+				}
+			}
+		}
+	}
+}
+
+
+// =============================================================================
+// TABLETTE
+// =============================================================================
+@media screen and (min-width: 768px ){
+	section.photo{
+		div.header{
+			div.button.tertiary{
+				span.icon{
+					img{}
+				}
+				p.text{}
+			}
+			div.dropdown-container{
+				div.button.tertiary{
+					span.icon{
+						img{}
+					}
+				}
+				div.dropdown{
+					ul{
+						li{}
+					}
+				}
+			}
+		}
+		div.content{
+			div.image-group{
+				img{}
+			}
+			div.info{
+				div.author{
+					div.illustration{
+						img{}
+					}
+					div.name{}
+				}
+				div.likes{
+					div.illustration{
+						img{}
+					}
+					p{}
+				}
+			}
+		}
+	}
+}
+// =============================================================================
+// DESKTOP
+// =============================================================================
+@media screen and (min-width: 1200px ){}
+
+// =============================================================================
+// ANIMATION
+// =============================================================================

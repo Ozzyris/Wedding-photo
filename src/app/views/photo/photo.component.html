@@ -1,0 +1,36 @@
+<section class="photo">
+	<div class="header">
+		<div class="button tertiary" routerLink="/dashboard">
+			<span class="icon"><img src="../../../assets/images/back.svg"></span>
+			<p class="text">Retour</p>
+		</div>
+		<div class="dropdown-container">
+			<div (click)="status = !status" class="button tertiary">
+				<span class="more" ><img src="../../../assets/images/more.svg"></span>
+			</div>
+			<div class="dropdown" [ngClass]="status ? 'open' : ''">
+				<ul>
+					<li>Télécharger la photo</li>
+					<li>Supprimer la photo</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="image-group">
+			<img src="https://images.unsplash.com/photo-1682685797818-c9dc151d241e?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+		</div>
+		<div class="info">
+			<div class="author">
+				<div class="illustration"><span class="avatar">AN</span></div>
+				<div class="name">Alison Nicol</div>
+			</div>
+			<div class="likes">
+				<div class="illustration">
+					<img src="../../../assets/images/heart.svg">
+				</div>
+				<p>12 likes</p>
+			</div>
+		</div>
+	</div>
+</section>

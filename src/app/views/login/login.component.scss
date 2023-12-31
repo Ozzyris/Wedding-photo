@@ -1,0 +1,99 @@
+// =============================================================================
+// IMPORT
+// =============================================================================
+@import "../../../assets/styles/ui-mixines";
+
+// =============================================================================
+// MOBILE
+// =============================================================================
+section.login{
+	div.illustration_group{
+		@include container_sizing( 400px );
+		margin: 20vh auto 10vh auto;
+
+		span.illustration{
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+			
+		}
+		h2.title{
+			@include header-2( $neutral-900 );
+			text-align: center;
+			margin: 24px auto 8px auto;
+		}
+		h3.subtitle{
+			@include header-3( $neutral-900 );
+			text-align: center;
+		}
+	}
+	div.login{
+		@include container_sizing( 400px );
+
+		div.input-group{
+			@include input-text();
+			margin-bottom: 16px;
+
+			label{
+				span.optionnel{}
+			}
+			input{}
+		}
+		div.block-banner{
+			margin-top: 8px;
+			@include block-banner();
+		}
+	}
+	div.footer{
+		position: absolute;
+		bottom: 24px;
+		width: 100%;
+
+		a.button.primary{
+			@include container_sizing( 400px );
+			@include primary_button();
+			width: 85%;
+			box-sizing: border-box;
+		}
+	}
+}
+
+// =============================================================================
+// TABLETTE
+// =============================================================================
+@media screen and (min-width: 768px ){
+	section.login{
+		div.illustration_group{
+			span.illustration{
+				img{}
+				
+			}
+			h2.title{}
+			h3.subtitle{}
+		}
+		div.login{
+			div.input-group{
+				label{
+					span.optionnel{}
+				}
+				input{}
+			}
+			div.block-banner{
+			}
+		}
+		div.footer{
+			a.button.primary{
+				width: calc(85% - 32px);
+			}
+		}
+	}
+}
+// =============================================================================
+// DESKTOP
+// =============================================================================
+@media screen and (min-width: 1200px ){}
+
+// =============================================================================
+// ANIMATION
+// =============================================================================
